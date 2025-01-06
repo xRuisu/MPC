@@ -81,7 +81,8 @@ Simply run the installer and follow the instructions to install MPC on your syst
 
 #### MPC Folder
 
-Reports generated using MPC can be found on your `Desktop`, located in the `MPC` folder.
+Reports generated using MPC can be found on your `Desktop`, located in the `MPC` folder.  
+Example Generated Report: https://github.com/xRuisu/MPC/blob/main/Extras/Example%20Report.pdf
 
 ## Versions  
 
