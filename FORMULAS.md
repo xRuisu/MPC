@@ -115,3 +115,4 @@ This documentation provides an overview of the formulas used in the Metrics Perf
   Usually returns 100% however, didn't use full decimal value.
   ```
   ### Summation Formula:
+![Summation](https://github.com/user-attachments/assets/e3ba6f85-8121-4eaf-aab4-674042c34b61)
