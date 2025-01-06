@@ -98,7 +98,7 @@ MPC for `Java 9` and above: version `xruisu-mpc-0.9.0-BETA-21.0.5-shaded.jar` is
 - Custom Report Headers: Add custom headers to your report.
 - Report IDs: Each report has its own ID for easy navigation or future reference.
 - Date & Time: Provided for every report generated.
-- Single Report Generation: Use properties to set volume/duration and input the required data.
+- Single Report Generation: Use properties to set volume/employee total and input the required data.
 - User Handicaps: Limit an employee's scans using handicaps found in properties.
 - Friendly UI/UX: Easy to understand buttons/fields and simple directions.
 
