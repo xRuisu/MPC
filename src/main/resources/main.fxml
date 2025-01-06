@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<SplitPane fx:id="mainPane" dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="600.0" styleClass="mainSplitPane" stylesheets="@application-styles.css"
+   xmlns="http://javafx.com/javafx/21"
+   xmlns:fx="http://javafx.com/fxml/1" fx:controller="xruisu.project.mpc.controllers.AppController">
+   <items>
+      <VBox fx:id="vBox" maxWidth="228.0" style="-fx-background-color: BLACK;">
+         <children>
+            <Pane fx:id="leftMiddlePane" prefHeight="200.0" prefWidth="230.0" style="-fx-background-color: BLACK;">
+               <children>
+                  <ButtonBar layoutX="15.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: darkgray; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-width: 2;">
+                     <buttons>
+                        <ImageView fx:id="reportView" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="exValues" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="timeDateLabel" alignment="CENTER" focusTraversable="false" prefHeight="38.0" prefWidth="145.0" style="-fx-background-color: #1f1f1f; -fx-background-radius: 100; -fx-border-color: darkgray; -fx-border-radius: 100;" text="Todays Date" textAlignment="CENTER" />
+                     </buttons>
+                  </ButtonBar>
+                  <Label fx:id="broadcast" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="75.0" prefHeight="53.0" prefWidth="220.0" styleClass="broadcast" stylesheets="@application-styles.css" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </Pane>
+            <StackPane prefHeight="33.0" prefWidth="230.0" style="-fx-background-color: #1f1f1f;">
+               <children>
+                  <TextField fx:id="durationInput" prefHeight="30.0" prefWidth="193.0" promptText="0000-0000" styleClass="durationInput" stylesheets="@application-styles.css">
+                     <StackPane.margin>
+                        <Insets left="32.0" right="4.0" />
+                     </StackPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip contentDisplay="TOP" text="DURATION: 0015-0400">
+                           <font>
+                              <Font name="Anton SC Regular" size="14.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </TextField>
+                  <Label fx:id="leftDurationLabel" alignment="CENTER" contentDisplay="TOP" prefHeight="34.0" prefWidth="54.0" styleClass="leftDurationLabel" stylesheets="@application-styles.css" text=" 𝓓:" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                     <StackPane.margin>
+                        <Insets left="-3.0" right="195.0" />
+                     </StackPane.margin>
+                     <tooltip>
+                        <Tooltip contentDisplay="TOP" text="DURATION: 0015-0400">
+                           <font>
+                              <Font name="Anton SC Regular" size="14.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="12.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="4.0" right="4.0" top="4.0" />
+               </padding>
+            </StackPane>
+            <TabPane fx:id="tabPane" prefHeight="270.0" prefWidth="230.0" style="-fx-background-color: BLACK; -fx-background-radius: 20; -fx-background-color: #1f1f1f;" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab fx:id="employeeTab" disable="true" style="-fx-background-color: BLACK;" styleClass="employeesTab" text="EMPLOYEES">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="133.0" prefWidth="230.0" styleClass="anchorPane" stylesheets="@application-styles.css">
+                           <children>
+                              <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="-2.0" layoutY="-3.0" prefHeight="137.0" prefWidth="251.0" styleClass="scrollPane">
+                                 <content>
+                                    <FlowPane fx:id="employeeListPane" styleClass="employeeFlowPane" stylesheets="@application-styles.css">
+                                       <children>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="5.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="25.0" prefWidth="220.0" promptText="Employee">
+                                             <FlowPane.margin>
+                                                <Insets bottom="5.0" left="6.0" right="2.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="10.0" right="1.0" top="1.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Gruppo Regular" size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                          <Label maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                       </children>
+                                    </FlowPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="scansTab" disable="true" style="-fx-background-color: BLACK;" styleClass="scansTab" text="SCANS">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="212.0" styleClass="anchorPane">
+                           <children>
+                              <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="137.0" prefWidth="251.0" styleClass="scrollPane">
+                                 <content>
+                                    <FlowPane fx:id="scanListPane" prefWidth="218.0" styleClass="flowPane">
+                                       <children>
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" style="-fx-text-fill: #00fffc;" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="8.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="8.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="scansField_2" PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </TextField>
+
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="106.0" textAlignment="CENTER">
+                                             <FlowPane.margin>
+                                                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                             </FlowPane.margin>
+                                             <padding>
+                                                <Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField PrefWidth="105" prefHeight="25.0" prefWidth="106.0" />
+                                       </children>
+                                    </FlowPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="valuesTab" disable="true" style="-fx-background-color: TRANSPARENT;" text=" ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="168.0" prefWidth="181.0">
+                           <children>
+                              <ScrollPane prefHeight="154.0" prefWidth="244.0">
+                                 <content>
+                                    <FlowPane fx:id="valuesListPane" prefHeight="210.0" prefWidth="229.0">
+                                       <children>
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                          <Label PrefHeight="30" PrefWidth="115" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="125.0" textAlignment="CENTER" visible="false" />
+                                       </children>
+                                    </FlowPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TabPane>
+            <FlowPane fx:id="flowPane" alignment="CENTER">
+               <children>
+                  <Button fx:id="resetButton" focusTraversable="false" mnemonicParsing="false" prefHeight="11.0" prefWidth="210.0" styleClass="resetButton" stylesheets="@application-styles.css" text="ʀᴇsᴇᴛ ᴛᴀʙs" textAlignment="CENTER">
+                     <FlowPane.margin>
+                        <Insets />
+                     </FlowPane.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </FlowPane>
+         </children>
+      </VBox>
+      <Pane prefHeight="442.0" prefWidth="388.0" styleClass="wholeLeftPane" stylesheets="@application-styles.css">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0e161e" height="68.0" layoutX="-7.0" stroke="BLACK" strokeType="INSIDE" width="378.0" />
+            <Label fx:id="title" alignment="CENTER" contentDisplay="TOP" layoutY="4.0" prefHeight="35.0" prefWidth="361.0" styleClass="title" stylesheets="@application-styles.css" text="Metrics Performance Calculator" textAlignment="CENTER">
+            </Label>
+            <Label fx:id="subTitle" alignment="CENTER" contentDisplay="TOP" layoutY="25.0" prefHeight="38.0" prefWidth="361.0" styleClass="subTitle" stylesheets="@application-styles.css" text="Data Solutions Made Easier" textAlignment="CENTER" />
+            <SplitPane fx:id="rightSplitPane" layoutY="68.0" prefHeight="362.0" prefWidth="368.0" style="-fx-background-color: BLACK;">
+               <items>
+                  <VBox prefHeight="368.0" prefWidth="366.0">
+                     <children>
+                        <Rectangle fill="#1f1f1f" height="26.0" opacity="0.5" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="0.0" strokeType="INSIDE" width="364.0">
+                           <effect>
+                              <DropShadow blurType="ONE_PASS_BOX" height="255.0" radius="127.0" spread="0.7" width="255.0">
+                                 <color>
+                                    <Color red="0.03529411926865578" blue="1.0" opacity="0.800000011920929" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Rectangle>
+                        <FlowPane prefHeight="200.0" prefWidth="200.0" styleClass="textFlowPane" stylesheets="@application-styles.css">
+                           <children>
+                              <TextFlow fx:id="textFlowField" maxHeight="312.0" prefHeight="312.0" prefWidth="366.0">
+                                 <FlowPane.margin>
+                                    <Insets />
+                                 </FlowPane.margin>
+                              </TextFlow>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+               </items>
+            </SplitPane>
+            <Pane prefHeight="418.0" prefWidth="362.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="45.0" layoutX="-3.0" layoutY="373.0" stroke="BLACK" strokeType="INSIDE" width="368.0">
+                     <effect>
+                        <InnerShadow choke="0.8" radius="4.75" width="0.0" />
+                     </effect>
+                  </Rectangle>
+                  <Text boundsType="VISUAL" fill="#e9e1e1" layoutX="3.0" layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="infoLabelOne" text="Copyright © 2025 Louis Harris | xRuisu" wrappingWidth="337.125" x="12.0" y="389.0">
+                  </Text>
+                  <Text boundsType="VISUAL" fill="#e9e1e1" layoutX="2.0" layoutY="8.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="infoLabelTwo" text="  Licensed under the GNU General Public License v3.0" wrappingWidth="350.125" x="8.0" y="400.0">
+                  </Text>
+               </children>
+            </Pane>
+            <Text fx:id="rightAverageText" layoutX="86.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="averageLabel" text="ᴀᴠᴇʀᴀɢᴇ: " wrappingWidth="72.0">
+            </Text>
+            <Label fx:id="averageValue" layoutX="131.0" layoutY="69.0" prefHeight="25.0" prefWidth="78.0" styleClass="averageValue" stylesheets="@application-styles.css" text="0.0" textAlignment="CENTER">
+               <padding>
+                  <Insets left="15.0" right="12.0" />
+               </padding>
+               <tooltip>
+                  <Tooltip contentDisplay="TOP" text="AVERAGE/GOAL">
+                     <font>
+                        <Font name="Anton SC Regular" size="14.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
+            </Label>
+            <Text fx:id="rightDurationText" layoutX="185.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="rightDurationLabel" text="ᴅᴜʀᴀᴛɪᴏɴ: " wrappingWidth="150.654296875">
+            </Text>
+            <Label fx:id="durationValue" layoutX="246.0" layoutY="69.0" prefHeight="25.0" prefWidth="78.0" styleClass="durationValue" stylesheets="@application-styles.css" text="000" textAlignment="CENTER">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <tooltip>
+                  <Tooltip text="TOTAL DURATION">
+                     <font>
+                        <Font name="Anton SC Regular" size="14.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
+            </Label>
+         </children>
+      </Pane>
+   </items>
+</SplitPane>

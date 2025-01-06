@@ -1,0 +1,51 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# IDE and editor folders
+.idea/
+.vscode/
+*.iml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Maven-specific files
+target/
+.mvn/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+dependency-reduced-pom.xml
+release.properties
+
+# Installer output directory
+/mpc-installer/
+
+# Ignore Maven output directory
+/target/
+
+# Non-essential or generated resources
+*.css.map
+
+# Documentation and Markdown files (always include)
+!*.md
+
+# Include essential assets
+!/src/main/resources/assets/fonts/
+!/src/main/resources/assets/images/

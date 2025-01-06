@@ -1,0 +1,195 @@
+/* APPLICATION TITLE PROPERTIES */
+.title {
+  -fx-background-color: none;
+  background-color: none;
+
+  -fx-text-fill: #00f7ffe5;
+  -fx-font-family: "Anton SC Regular";
+  font-family: "Anton SC Regular";
+
+  -fx-font-size: 23px;
+  font-size: 23px;
+}
+.subTitle {
+  -fx-font-family: "Gruppo Regular";
+  font-family: "Gruppo Regular";
+
+  -fx-background-color: NONE;
+  background-color: NONE;
+
+  -fx-text-fill: AZURE;
+
+  -fx-font-size: 20px;
+  font-size: 20px;
+}
+
+/* AVERAGE & DURATION LABEL/VALUE PROPERTIES */
+.averageLabel {
+  -fx-fill: white;
+  fill: white;
+
+  -fx-font-size: 16px;
+  font-size: 16px;
+}
+.averageValue {
+  -fx-text-fill: cyan;
+
+  -fx-font-size: 14px;
+  font-size: 14px;
+}
+.rightDurationLabel {
+  -fx-fill: white;
+  fill: white;
+
+  -fx-font-size: 16px;
+  font-size: 16px;
+}
+.durationValue {
+  -fx-text-fill: cyan;
+
+  -fx-font-size: 14px;
+  font-size: 14px;
+}
+
+/* BOTTOM CREDITS PROPERTIES */
+.infoLabelOne {
+  -fx-font-family: "Calibri";
+  font-family: "Calibri";
+
+  -fx-font-size: 12px;
+  font-size: 12px;
+
+  -fx-fill: GREEN;
+  fill: GREEN;
+}
+.infoLabelTwo {
+  -fx-font-family: "Calibri";
+  font-family: "Calibri";
+
+  -fx-font-size: 12px;
+  font-size: 12px;
+
+  -fx-fill: GREEN;
+  fill: GREEN;
+}
+
+/* DURATION LABEL PROPERTIES */
+.leftDurationLabel {
+  -fx-background-color: #1f1f1f;
+  background-color: #1f1f1f;
+
+  -fx-text-fill: #00fffc;
+
+  -fx-font-size: 16px;
+  font-size: 16px;
+}
+
+/* DURATION INPUT PROPERTIES */
+.durationInput {
+  -fx-font-family: "Consolas";
+  font-family: "Consolas";
+  -fx-background-color: BLACK;
+  background-color: BLACK;
+
+  -fx-font-size: 14px;
+  font-size: 14px;
+
+  -fx-text-fill: #00fffc;
+  -fx-prompt-text-fill: #c1bfbf;
+
+  -fx-highlight-fill: WHITE;
+  -fx-highlight-text-fill: BLACK;
+
+  -fx-border-radius: 30;
+  border-radius: 30;
+
+  -fx-background-radius: 30;
+
+  -fx-border-color: AZURE;
+  border-color: AZURE;
+}
+
+/* RESET TAB PROPERTIES */
+.resetButton {
+  -fx-background-color: #1f1f1f;
+  background-color: #1f1f1f;
+
+  -fx-font-size: 14px;
+  font-size: 14px;
+
+  -fx-border-color: AZURE;
+  border-color: AZURE;
+
+  -fx-border-width: 0 2 0 2;
+  border-width: 0 2 0 2;
+}
+
+/* BROADCASTER PROPERTIES */
+.broadcast {
+  -fx-border-color: AZURE;
+  border-color: AZURE;
+
+  -fx-border-radius: 10;
+  border-radius: 10;
+  -fx-background-radius: 10;
+}
+
+/* TAB TEXT PROPERTIES */
+.employeesTab .text {
+  -fx-font-family: "Gruppo Regular";
+  font-family: "Gruppo Regular";
+
+  -fx-fill: AZURE;
+  fill: AZURE;
+}
+.scansTab .text {
+  -fx-font-family: "Gruppo Regular";
+  font-family: "Gruppo Regular";
+  -fx-fill: AZURE;
+  fill: AZURE;
+}
+
+/* APPLICATION PROPERTIES */
+.scroll-bar {
+  -fx-background-color: BLACK;
+  background-color: BLACK;
+}
+.split-pane-divider {
+  -fx-border-color: #1f1f1f;
+  border-color: #1f1f1f;
+
+  -fx-padding: 0;
+  padding: 0;
+
+  -fx-border-width: 2;
+  border-width: 2;
+}
+.tab-pane .tab-header-area .tab-header-background {
+  -fx-background-color: #1f1f1f;
+  background-color: #1f1f1f;
+}
+.viewport {
+  -fx-background-color: #1f1f1f;
+  background-color: #1f1f1f;
+}
+
+/* PROGRESS BAR PROPERTIES */
+.progress-bar {
+  -fx-background-color: #1f1f1f;
+  background-color: #1f1f1f;
+
+  -fx-border-color: #1f1f1f;
+  border-color: #1f1f1f;
+
+  -fx-border-width: 1;
+  border-width: 1;
+}
+.progress-bar .bar {
+  -fx-background-color: #00fffc;
+  background-color: #00fffc;
+  -fx-border-color: #1f1f1f;
+  border-color: #1f1f1f;
+
+  -fx-border-width: 2;
+  border-width: 2;
+}
