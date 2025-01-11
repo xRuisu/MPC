@@ -75,7 +75,7 @@ This documentation provides an overview of the formulas used in the Metrics Perf
 
 ---
 
-#### **4. RATE PERCENTILE (`RP`)**:
+#### **4. Rate Percentile (`RP`)**:
 
 - **Formula**: `RP` = (`R` / `A`) \* 100
 - **Example**:
