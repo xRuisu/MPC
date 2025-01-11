@@ -1,4 +1,5 @@
 
+![MPC-Banner](https://github.com/user-attachments/assets/8e4f9e01-fceb-46ea-b246-1fb70221a19c)
 <p align="center"><i>The development of MPC was inspired by FedEx Express, providing the ability to generate more accurate scan rates and detailed information for individuals, teams, or anyone interested.</i></p>
 
 ## MPC | Getting Started
@@ -80,7 +81,8 @@ Simply run the installer and follow the instructions to install MPC on your syst
 
 #### MPC Folder
 
-Reports generated using MPC can be found on your `Desktop`, located in the `MPC` folder.
+Reports generated using MPC can be found on your `Desktop`, located in the `MPC` folder.  
+Example Generated Report: https://github.com/xRuisu/MPC/blob/main/Extras/Example%20Report.pdf
 
 ## Versions  
 
@@ -96,7 +98,7 @@ MPC for `Java 9` and above: version `xruisu-mpc-0.9.0-BETA-21.0.5-shaded.jar` is
 - Custom Report Headers: Add custom headers to your report.
 - Report IDs: Each report has its own ID for easy navigation or future reference.
 - Date & Time: Provided for every report generated.
-- Single Report Generation: Use properties to set volume/duration and input the required data.
+- Single Report Generation: Use properties to set volume/employee total and input the required data.
 - User Handicaps: Limit an employee's scans using handicaps found in properties.
 - Friendly UI/UX: Easy to understand buttons/fields and simple directions.
 
@@ -184,3 +186,4 @@ The calculations and metrics presented in this report are based on the data prov
 - Please credit `Louis Harris | xRuisu` as the original creator.
 
 ### Preview  
+![MPC](https://github.com/user-attachments/assets/e4c581f6-4343-4b44-89a3-a6ce6e79d2a7)
