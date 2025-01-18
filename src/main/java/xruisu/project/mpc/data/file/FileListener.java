@@ -41,7 +41,7 @@ public class FileListener extends EncryptionHandler implements Listener {
 			}
 
 			try (FileOutputStream fos = new FileOutputStream(file, false)) {
-				byte[] encryptedData = EncryptionHandler.encrypt(data);
+				byte[] encryptedData = encrypt(data);
 				fos.write(encryptedData);
 				logger.info("Report was written to file successfully");
 			}
@@ -73,7 +73,7 @@ public class FileListener extends EncryptionHandler implements Listener {
 		if (file != null) {
 			try (FileInputStream fis = new FileInputStream(file)) {
 				byte[] fileData = fis.readAllBytes();
-				var mpcFileData = EncryptionHandler.decrypt(fileData);
+				var mpcFileData = decrypt(fileData);
 
 				var displayText = new Text(mpcFileData);
 				NodeHandler.setStyleOn(mainText, displayText, MyFonts.getGruppo(), 25, Color.BLACK, Color.WHITESMOKE,

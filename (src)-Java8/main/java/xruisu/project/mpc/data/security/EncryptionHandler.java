@@ -11,16 +11,16 @@ public class EncryptionHandler {
 
     protected static byte[] encrypt(String data) throws Exception {
         SecretKey key = new SecretKeySpec(KEY, ALGORITHM);
-        Cipher cipher = Cipher.getInstance(ALGORITHM);
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
         cipher.init(Cipher.ENCRYPT_MODE, key);
-        return cipher.doFinal(data.getBytes());
+        return cipher.doFinal(data.getBytes("UTF-8"));
     }
 
     protected static String decrypt(byte[] encryptedData) throws Exception {
         SecretKey key = new SecretKeySpec(KEY, ALGORITHM);
-        Cipher cipher = Cipher.getInstance(ALGORITHM);
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
         cipher.init(Cipher.DECRYPT_MODE, key);
         byte[] decryptedData = cipher.doFinal(encryptedData);
-        return new String(decryptedData);
+        return new String(decryptedData, "UTF-8");
     }
 }
