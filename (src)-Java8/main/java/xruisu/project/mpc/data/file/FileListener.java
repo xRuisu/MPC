@@ -3,8 +3,7 @@ package xruisu.project.mpc.data.file;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.ByteArrayOutputStream;
 
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -42,9 +41,10 @@ public class FileListener extends EncryptionHandler implements Listener {
 				logger.info("File already exists, the current file was overwritten.");
 			}
 
-			try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file, false), "UTF-8")) {
-				writer.write(data);
-				logger.info("Report was written to file successfully with UTF-8 encoding.");
+			try (FileOutputStream fos = new FileOutputStream(file, false)) {
+				byte[] encryptedData = encrypt(data);
+				fos.write(encryptedData);
+				logger.info("Report was written to file successfully");
 			}
 			fileName = file.getName();
 		} catch (Exception e) {
@@ -72,17 +72,22 @@ public class FileListener extends EncryptionHandler implements Listener {
 		File file = fileChooser.showOpenDialog(stage);
 
 		if (file != null) {
-			try (InputStreamReader reader = new InputStreamReader(new FileInputStream(file), "UTF-8")) {
-				char[] buffer = new char[(int) file.length()];
-				reader.read(buffer);
-				String mpcFileData = new String(buffer);
+			try (FileInputStream fis = new FileInputStream(file);
+					ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+				byte[] buffer = new byte[1024];
+				int bytesRead;
+				while ((bytesRead = fis.read(buffer)) != -1) {
+					baos.write(buffer, 0, bytesRead);
+				}
+				byte[] fileData = baos.toByteArray();
+				String mpcFileData = decrypt(fileData);
 
 				Text displayText = new Text(mpcFileData);
 				NodeHandler.setStyleOn(mainText, displayText, MyFonts.getGruppo(), 25, Color.BLACK, Color.WHITESMOKE,
 						"");
 				NodeHandler.add(mainText, 0, displayText);
 
-				logger.info("File opened successfully with UTF-8 encoding: " + file.getName());
+				logger.info("File opened successfully: " + file.getName());
 			} catch (Exception e) {
 				logger.warn("Error reading file, please ensure file is a .mpc file: " + file.getName());
 				logger.warn(ExceptionHandling.critical());
@@ -110,9 +115,10 @@ public class FileListener extends EncryptionHandler implements Listener {
 				logger.info("Log for: " + DataManager.getCurrentDate() + " has been updated!");
 			}
 
-			try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file), "UTF-8")) {
-				writer.write(data);
-				logger.info("Log written to file successfully with UTF-8 encoding.");
+			try (FileOutputStream fos = new FileOutputStream(file)) {
+				byte[] fileData = data.getBytes("UTF-8");
+				fos.write(fileData);
+				logger.info("Log written to file successfully.");
 			}
 		} catch (Exception e) {
 			logger.warn("An error occurred while creating or writing to the file.");
