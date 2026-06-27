@@ -1,6 +1,50 @@
-
 ![MPC-Banner](https://github.com/user-attachments/assets/8e4f9e01-fceb-46ea-b246-1fb70221a19c)
-<p align="center"><i>The development of MPC was inspired by FedEx Express, providing the ability to generate more accurate scan rates and detailed information for individuals, teams, or anyone interested.</i></p>
+
+<p align="center"><i>A Java-based analytics application for calculating scan rates, comparing productivity metrics, and generating detailed performance reports.</i></p>
+
+## Overview
+
+**MPC (Metric Performance Calculator)** is a Java desktop application designed to evaluate employee scan performance using time-based productivity calculations. The project was inspired by real operational challenges at FedEx Express, where scan rate calculations can be difficult to interpret accurately without additional context.
+
+MPC allows users to enter employees, scan totals, and a sort duration, then generates detailed performance metrics including individual scan rates, contribution percentages, percentile rankings, and configurable performance adjustments.
+
+The goal of MPC is to make productivity data easier to calculate, review, and explain through structured reports.
+
+## Key Features
+
+* Time-based scan rate calculations
+* Support for up to 20 employees per session
+* Real-time calculations as data is entered
+* Individual and team productivity reporting
+* Contribution percentage and percentile ranking
+* Configurable performance adjustments / handicaps
+* Custom report headers
+* Customizable report labels
+* Report viewer and report properties
+* Generated report IDs, dates, and timestamps
+* Exportable `.mpc`, `.pdf`, and printable reports depending on version
+* Standalone `.exe` builds that do not require Java to be installed
+
+## Technologies Used
+
+* Java
+* JavaFX
+* Scene Builder
+* Git
+* GitHub
+* File I/O
+* Azul Zulu JDK 21 / Java 8 compatibility builds
+
+## What I Learned
+
+This project helped me practice:
+
+* Designing custom calculation logic
+* Structuring data for employee and team performance analysis
+* Building report-generation workflows
+* Creating a JavaFX user interface with multiple configurable properties
+* Packaging Java applications for different runtime environments
+* Organizing a project into controllers, data models, logic, utilities, and application entry points
 
 ## MPC | Getting Started
 
@@ -115,7 +159,7 @@ MPC for `Java 9` and above: version `xruisu-mpc-0.9.0-BETA-21.0.5-shaded.jar` is
 
 - Incompatible Files: Versions built with different Java versions are not compatible with each other.
 - Independent developer status may lead to being flagged as malicious without a valid `code-signing certificate`.
-- As a *self-taught developer*, some flaws, improper handling, tests, or configurations may be present.
+- This project is independently developed and may continue to evolve as improvements are identified.
 
 ### Assets and Icons
 
